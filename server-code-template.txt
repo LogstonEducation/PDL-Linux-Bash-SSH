@@ -1,0 +1,16 @@
+Hello {EMAIL}!
+
+You've been issued a server code for use use with the PDL Linux, Bash, SSH course.
+Please use the code below to create and configure a Virtual Machine (VM) for
+this course.
+
+Server Code: {SERVER_CODE}
+
+VM Creation Guide:
+
+https://docs.google.com/document/d/1-yIIYXiBCrdXqOp37POpEGm0YzNEYlGkkGNUTs1Ax94/
+
+Finally, if you have any issues with this code, please reach out to the PDL
+team.
+
+Best, Paul
