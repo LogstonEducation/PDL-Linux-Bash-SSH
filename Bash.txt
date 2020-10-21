@@ -1,0 +1,111 @@
+What is Bash and why we will be using it?
+
+    Bash is the shell, or interpreter on many Linux distributions that takes human commands and turns them into computer commands.
+    The shell is the program that understands and executes the commands a user enters. After stone tablets and punch cards but before windowed applications, users of computers need to command a computer to do something via typing instructions and pressing "enter". This is still a very powerful way to control a computer. The text entered into a shell prompt are commands and information/arguments for those commands.
+    
+- https://www.gnu.org/software/bash/manual/bash.pdf
+
+- We will be using Bash 4.4
+
+- To start Bash, you will open a terminal emulator 
+
+    - What's a terminal? 
+        An end point to connect to a shared computer. 
+        PRINT BASED: https://en.wikipedia.org/wiki/Teletype_Model_33#/media/File:Teletype-IMG_7287.jpg
+        VIDEO: https://i.redd.it/jqhr6dzw3jez.jpg
+        The terminal had no CPU, HDD itself. It just had a screen, a keyboard, and connection to another shared computer.
+    
+    As computers developed, the need to instruct computers via a command line stayed but the hardware was replaced by a software program. 
+    
+    - On Linux distros and Mac, this program is called Terminal, xterm, iterm, etc. 
+    - On windows, Win32 console, cmd.exe, PowerShell, etc.
+    
+    We will use Google Cloud's in-browser terminal emulator and open a connection to a remote machine. 
+    https://cloud.google.com/shell/
+    So instead of starting the bash program on our own machine, we are starting it on another machine and will let that remote machine execute our commands. All we will do is send our instructions to the remote machine. The act of opening a connection to this remote machine and starting bash (often done automatically) is called "shelling in".
+    
+    Terminal emulator creates a remote connection to GCE computer and starts the Bash program. 
+
+Bash can interpret commands entered at the prompt and commands written in files. For now, we will play with commands at the prompt. 
+
+BUT FIRST
+
+Directory Structure
+
+    Linux file structure is such that all files and directories live under a master directory call "root".
+    This creates a tree like structure of files and directories. To get to the root directory, you would use "cd /".
+    To reference a specific file you can use absolute or relative paths. Absolute paths start from the root of the file system where as relative file paths are local to current directory in which you reside. 
+    . references the current directory and .. references the parent.
+    Path parts are sperated by "/".
+
+COMMANDS:
+
+    echo "hello" vs echo hello you
+    
+    ls -la --> Directory Structure
+    cd / cd -
+    mkdir
+    pwd 
+    history
+    touch
+    rm 
+    echo "Hello" > file1
+    more file1  (but less is more)
+    less file2
+    cat file1 file2
+    man cat
+    wget https://github.com/logston/Bash-Class/raw/master/Archive.zip
+    unzip Archive.zip
+    more / less review with contents of Archive
+    ps axuf
+        -a Display information about other users' processes as well as your own.
+        -x include processes which do not have a controlling terminal
+        -u display user name info and resource info
+        -f reformat the output in tree form
+
+VARIABLES
+
+Bounds of Variables
+
+$ VAR1="A sentence"
+$ echo "A sentence with $VAR1 in it"
+A sentence with A sentence in it
+$ echo 'A sentence with $VAR1 in it'
+A sentence with $VAR1 in it
+
+for i in $(seq 1 10); do echo $i; done
+for i in $(seq 1 10); do echo $(($i + $i)); done   <- Have to use arithmetic expression to evaluate arithmetic
+
+FUN: for i in $(seq 1 10); do say $i; done
+FUN: while true; do say "hi"; done
+FUN: while true; do say "hi"; done & <= background
+
+    kill
+    sudo <= become root user
+    curl <= great tool for testing APIs
+    ping 
+    
+In nano: sum.sh
+>>>>
+#!/bin/bash
+x=0
+for i in $@
+do
+   x=$(($x + $i))
+done
+echo $x
+<<<<<
+
+Permissions! 
+
+chmod +x sum.sh
+./sum.sh
+
+Why can't we just type sum.sh 1 2 3 4
+PATH and environment files, how does program lookup work?
+
+Add home dir to PATH
+$ PATH=$PATH:$(pwd)
+sum.sh
+
+Supplemental reading: http://guide.bash.academy/ Chapters 1-3

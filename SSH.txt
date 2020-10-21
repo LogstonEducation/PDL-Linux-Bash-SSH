@@ -1,0 +1,27 @@
+SSH, or Secure Shell, is a shell opened on a remote computer.
+
+How does it work?
+
+You tell ssh what user you want to log in as and on what computer on the
+internet (or intranet):
+
+ssh <user>@<host>:<port (usually 22)>
+
+So what's the secure part?
+
+Symetric Key
+Symetirc Key Cipher
+Asymetirc Key
+    Public Key - Everyone gets this, can not even decrypt its own messages
+    Private Key - Kept private, only the owner of the pair can see this.
+
+As part of the symmetrical encryption negotiation outlined above, a message
+authentication code (MAC) algorithm is selected. The algorithm is chosen by
+working through the client's list of acceptable MAC choices. The first one out
+of this list that the server supports will be used.
+
+Top Secret ECC 384 and RSA 7680
+
+ssh-keygen -t ed25519 -b 384
+
+less ~/.ssh/id_rsa.pub ...

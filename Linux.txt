@@ -1,0 +1,24 @@
+What is an Operating System?
+
+    - A suite of software that allows for managment of hardware
+        - CPU
+        - RAM
+        - HDD
+        - Internet
+        - Keybaord
+        - etc
+    - We ask the OS for memory to run our program and the OS does the talking
+      to hardware.
+    - We ask for information to be sent to Google over our NIC, the OS will
+      take our stream of data and send it over network.
+    - We talk to the operating system, and the operating system talks to the
+      hardware, hardware talks to the OS and then the OS talks back to us.
+    - The OS creates this level playing field for our software. Now our
+      software can run on all types of hardware, we just need to make sure our
+      software can run on the OS and the hardware talk is the OS's problem.
+
+All the different versions of Linux combine the linux kernal (the bare bones OS
+needed to run a machine) and some userland software (ie. software over and
+above the kernal that adds functionality to the machine) (eg. email
+applications, browsers, desktop window manager (of which there are tons: 42
+best window managers*))
