@@ -54,7 +54,7 @@ COMMANDS:
     less file2
     cat file1 file2
     man cat
-    wget https://github.com/logston/Bash-Class/raw/master/Archive.zip
+    wget https://github.com/LogstonEducation/PDL-Linux-Bash-SSH/raw/master/Archive.zip
     unzip Archive.zip
     more / less review with contents of Archive
     ps axuf
